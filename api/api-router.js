@@ -6,10 +6,12 @@ const router = express.Router();
 
 router.use(express.json());
 
+// all these paths begins with the /api
 router.get('/', (req, res) => {
   res.status(200).json({ api: 'up' });
 });
 
+// api/shouts
 router.get('/shouts', (req, res, next) => {
   Shouts.find()
     .then(shouts => {
